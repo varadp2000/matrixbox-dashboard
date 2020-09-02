@@ -2,7 +2,7 @@
   <div>
     <div v-show="!loading">
       <div
-        style="height:75vh;background-color:black;opacity:0.9;;background-position: center;
+        style="height:75vh;background-color:black;opacity:0.9;background-position: center;
   background-repeat: no-repeat;
   background-size: cover;"
         class="hidesm"
@@ -14,9 +14,9 @@
         </vue-particles>
 
         <v-img
-          src="https://woodmartcdn-cec2.kxcdn.com/wp-content/uploads/2018/04/v-mobileapp-slider-phone.png"
-          width="200px"
-          style="position:absolute;top:200px;right:18%"
+          src="https://signalwealth.ai/images/slider/ai-brain.png"
+          width="500px"
+          style="position:absolute;top:100px;right:10%"
           data-aos="fade-left"
           data-aos-duration="1500"
         />

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hiddensm">
+    <div>
       <v-row style="height:135px;background-color:#6d0000;color:white;">
         <div
           class="lowerTriangle"
@@ -87,21 +87,28 @@
               style="color:#6D0000;margin-left:5px;font-size:15px;height:30px;margin-bottom:10px"
               outlined
               dark
-              @click="$router.push('/contact')"
-              >Contact Us</v-btn
+              @click="$router.push('/mission')"
+              >Mission & Vision</v-btn
             >
             <v-btn
               style="color:#6D0000;margin-left:5px;font-size:15px;height:30px;margin-bottom:10px"
               outlined
               dark
-              @click="$router.push('/mission')"
-              >Mission & Vision</v-btn
+              @click="$router.push('/contact')"
+              >Careers</v-btn
+            >
+            <v-btn
+              style="color:#6D0000;margin-left:5px;font-size:15px;height:30px;margin-bottom:10px"
+              outlined
+              dark
+              @click="$router.push('/contact')"
+              >Contact Us</v-btn
             >
           </v-col>
           <v-col cols="3"></v-col> </v-row
       ></v-row>
     </div>
-    <div clsss="showsm" style="background-color:black;">
+    <!--<div clsss="showsm" style="background-color:black;">
       <v-app-bar dark>
         <img src="../../../assets/logo.png" style="width:200px" /><v-spacer />
         <v-btn color="primary" dark @click="menu = !menu">Click ME</v-btn>
@@ -113,7 +120,7 @@
           </v-list-item>
         </v-list>
       </v-app-bar>
-    </div>
+    </div>-->
   </div>
 </template>
 

@@ -101,7 +101,7 @@ export default {
         this.$store.state.user.id = resp.data.data.id;
         this.$store.state.isLoggedIn = true;
         this.$store.state.user.email = resp.data.data.email;
-        this.$store.state.user.type = resp.data.data.type;
+        this.$store.state.user.type = resp.data.data.category;
         this.$store.state.user.user = resp.data.data.user;
 
         this.$router.push("/admin");

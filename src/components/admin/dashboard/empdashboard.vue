@@ -88,20 +88,19 @@
           height="150px"
           style="width:100%;margin-bottom:30px"
           shaped
+          @click="$router.push('/employee/addpackage')"
         >
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FD3550"
-                  >100</span
-                ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <br />
+                <span style="font-size:20px">Add New Package</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-plus-square"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -207,6 +206,10 @@ const gradients = [
 export default {
   created() {
     console.log(this.$store.state.isLoggedIn);
+    if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
+    if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
+    if (this.$store.state.user.type == "Tracker")
+      this.$router.replace("/tracker");
     //if (!this.$store.state.isLoggedIn) this.$router.push("/employee/login");
   },
   data: function() {

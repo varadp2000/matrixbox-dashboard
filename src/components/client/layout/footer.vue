@@ -1,13 +1,13 @@
 <template>
   <div>
-    <div style="background-color:#4F0000;height:300px">
+    <div style="background-color:#4F0000;height:230px">
       <v-row style="height:30px" />
       <v-row>
         <v-col cols="1" />
         <v-col cols="4">
           <img
             src="../../../assets/logo.png"
-            style="width:80%;padding-top:30px"
+            style="width:40%;padding-top:30px"
           />
         </v-col>
         <v-col cols="4" style="color:white;text-align:left;padding-top:40px">
@@ -17,9 +17,9 @@
               style="font-size:20px"
               aria-hidden="true"
             ></i
-            ><span style="font-size:20px;margin-right:7px">Address:</span> Flat
-            No 6, Block AB,Dillipur Tower, 6 Sapru Marg,<br />
-            <span style="margin-left:110px"
+            ><span style="font-size:20px;"></span> Flat No 6, Block AB,Dillipur
+            Tower, 6 Sapru Marg,<br />
+            <span style="margin-left:30px"
               >Adjecent to Hotel Gomti,Lucknow-226001</span
             >
           </p>
@@ -30,8 +30,7 @@
               style="font-size:20px"
               aria-hidden="true"
             ></i
-            ><span style="font-size:20px;margin-right:2px">Phone No:</span>+91
-            70685 07001
+            ><span style="font-size:20px;"></span>+91 70685 07001
           </p>
           <br />
           <p>
@@ -40,8 +39,7 @@
               style="font-size:20px"
               aria-hidden="true"
             ></i
-            ><span style="font-size:20px;margin-right:25px">E-Mail:</span
-            >Admin@matrixbox.in<br />
+            ><span style="font-size:20px;"></span>Admin@matrixbox.in<br />
           </p>
           <br />
         </v-col>
@@ -55,7 +53,7 @@
           <i class="fab fa-linkedin"></i>
         </v-col>
       </v-row>
-      <v-row style="margin-top:60px;height:40px">
+      <v-row style="height:40px">
         <v-col cols="12" style="background-color:black"
           ><p style="color:white;text-align:center">
             ©2020 All Rights Reserved Matrixbox Couries Pvt. Ltd | Designed And

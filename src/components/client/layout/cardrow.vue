@@ -20,15 +20,19 @@
                 alt="Avatar"
                 style="width:100%;height:100%;"
               />
-              <h1 style="position:absolute;bottom:5%;left:15%;color:white">
+              <h2 style="position:absolute;top:50%;left:20%;color:white">
                 CONFIDENTIALITY
-              </h1>
+              </h2>
             </div>
-            <div class="flip-card-back">
-              <h1>
+            <div
+              class="flip-card-back"
+              style="text-align:left;font-size:20px;padding:30px;padding-top:100px"
+              s
+            >
+              <p>
                 Matrixbox works with trustworthy employees for safety and
                 confidentiality for customers packages and valuable information.
-              </h1>
+              </p>
             </div>
           </div>
         </div>
@@ -40,15 +44,18 @@
                 alt="Avatar"
                 style="width:100%;height:100%;"
               />
-              <h1 style="position:absolute;bottom:5%;left:25%;color:white">
+              <h2 style="position:absolute;top:50%;left:35%;color:white">
                 INTEGRITY
-              </h1>
+              </h2>
             </div>
-            <div class="flip-card-back">
-              <h1>
+            <div
+              class="flip-card-back"
+              style="text-align:left;font-size:20px;padding:30px;padding-top:100px"
+            >
+              <p>
                 Matrixbox have all the records of employees on employee’s
                 database for safety from any unpleasant accident.
-              </h1>
+              </p>
             </div>
           </div>
         </div>
@@ -60,16 +67,19 @@
                 alt="Avatar"
                 style="width:100%;height:100%;"
               >
-                <h1 style="position:absolute;bottom:5%;left:25%;color:white">
+                <h2 style="position:absolute;top:50%;left:30%;color:white">
                   AVAILABILITY
-                </h1>
+                </h2>
               </v-img>
             </div>
-            <div class="flip-card-back">
-              <h1>
+            <div
+              style="text-align:left;font-size:20px;padding:30px;padding-top:100px"
+              class="flip-card-back"
+            >
+              <p>
                 Matrixbox create database of packages for further records of
                 customers.
-              </h1>
+              </p>
             </div>
           </div>
         </div>

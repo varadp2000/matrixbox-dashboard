@@ -56,6 +56,7 @@
           </td>
         </tr>
       </tbody>
+      {{ $route.name }}
     </v-simple-table>
   </div></template
 >

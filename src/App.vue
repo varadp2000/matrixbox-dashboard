@@ -51,7 +51,10 @@
         </p>
       </v-toolbar>
       <v-row>
-        <v-col cols="1" v-show="$route.name != 'login'">
+        <v-col
+          cols="1"
+          v-show="$route.name != 'login' && $route.name != 'empdashboard'"
+        >
           <v-navigation-drawer
             v-show="$store.state.isLoggedIn"
             v-model="drawer"

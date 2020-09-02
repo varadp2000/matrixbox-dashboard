@@ -120,8 +120,8 @@ export default {};
     #rows {
       display: flex;
       #row {
-        height: 30em;
-        width: 30em;
+        height: 20em;
+        width: 20em;
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-around;
@@ -163,6 +163,7 @@ export default {};
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
+  justify-content: space-around;
   position: relative;
   width: 100%;
   height: 100%;
@@ -184,6 +185,8 @@ export default {};
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  justify-content: space-around;
+  padding-top: 70px;
 }
 
 /* Style the front side (fallback if image is missing) */
