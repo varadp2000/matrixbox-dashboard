@@ -88,7 +88,7 @@
           height="150px"
           style="width:100%;margin-bottom:30px"
           shaped
-          @click="$router.push('/employee/addpackage')"
+          @click="$router.push('/admin/addpackage')"
         >
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
@@ -109,29 +109,41 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-data-table
-        :search="search"
-        :headers="headers"
-        :items="employee"
-        multi-sort
-        style="width:100%"
-      >
-        <template v-slot:item.fullname="{ item }">
-          {{ `${item.fname} ${item.lname}` }}
-        </template>
-        <template v-slot:item.actions="{ item }">
-          <router-link
-            :to="`/admin/view/${item.id}`"
-            style="text-decoration:none;margin-left:15px;"
-            ><v-icon style="color:green"> fas fa-eye </v-icon></router-link
-          >
-          <router-link
-            :to="`/admin/view/${item.id}`"
-            style="text-decoration:none;margin-left:15px;"
-            ><v-icon style="color:green"> fas fa-qrcode </v-icon></router-link
-          >
-        </template>
-      </v-data-table>
+      <v-simple-table style="width:100%">
+        <thead>
+          <tr>
+            <th>Sr. No</th>
+            <th>Sender's Name</th>
+            <th>Receiver's Name</th>
+            <th>Delivery Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="emp in employee" :key="emp.id">
+            <td>{{ emp.id }}</td>
+            <td>
+              {{
+                `${emp.pickUpFirstName} ${emp.pickUpMiddleName} ${emp.pickUpLastName}`
+              }}
+            </td>
+            <td>
+              {{
+                `${emp.deliveryFirstName} ${emp.deliveryMiddleName} ${emp.deliveryLastName}`
+              }}
+            </td>
+            <td>{{ emp.deliveryAddress }}</td>
+            <td>
+              <v-icon
+                @click="$router.push(`/admin/package/${emp.id}`)"
+                style="color:green;margin-right:10px"
+                >fas fa-eye</v-icon
+              >
+              <v-icon>fas fa-qrcode</v-icon>
+            </td>
+          </tr>
+        </tbody>
+      </v-simple-table>
     </v-row>
     <!--    <v-row cols="6">
       <v-col>
@@ -203,15 +215,8 @@ const gradients = [
   ["#00c6ff", "#F0F", "#FF0"],
   ["#f72047", "#ffd200", "#1feaea"],
 ];
+import axios from "axios";
 export default {
-  created() {
-    console.log(this.$store.state.isLoggedIn);
-    if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
-    if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
-    if (this.$store.state.user.type == "Tracker")
-      this.$router.replace("/tracker");
-    //if (!this.$store.state.isLoggedIn) this.$router.push("/employee/login");
-  },
   data: function() {
     return {
       value: [423, 446, 675, 510, 590, 610, 760],
@@ -247,143 +252,42 @@ export default {
           value: "id",
         },
       ],
-      employee: [
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Delhi",
-          email: "JohnDoe@examiple.com",
-          phone: "+91 99999 99999",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Kumar",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "Ravi",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 5,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-        {
-          id: 0,
-          fname: "John",
-          lname: "Doe",
-          area: "Mumbai",
-        },
-      ],
+      employee: [],
     };
+  },
+  async created() {
+    console.log(this.$store.state.isLoggedIn);
+    if (!this.$store.state.isLoggedIn) this.$router.push("/superadmin/login");
+    if (this.$store.state.user.type == "Super")
+      this.$router.replace("/superadmin");
+    if (this.$store.state.user.type == "Tracker")
+      this.$router.replace("/tracker");
+    //if (!this.$store.state.isLoggedIn) this.$router.push("/employee/login");
+    let config = {
+      method: "POST",
+      url: "http://matrixbox.in:3000/admin/package/list",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "*/*",
+        Authorization: this.$store.state.user.token,
+      },
+      data: {
+        search: "",
+        filterBy: "serialNumber",
+        category: "",
+        pagination: {
+          page: 1,
+          rowsPerPage: 100,
+          sortBy: "id",
+          descending: true,
+        },
+      },
+    };
+
+    let resp = await axios(config);
+    this.employee = resp.data.data;
+    console.log(resp);
   },
 };
 </script>

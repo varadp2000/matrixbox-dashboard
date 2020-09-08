@@ -103,6 +103,7 @@ export default {
         this.$store.state.user.email = resp.data.data.email;
         this.$store.state.user.type = resp.data.data.category;
         this.$store.state.user.user = resp.data.data.user;
+        this.$store.state.user.token = resp.data.data.token;
 
         this.$router.push("/admin");
       } catch (err) {

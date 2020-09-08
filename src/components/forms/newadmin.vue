@@ -335,8 +335,8 @@ export default {
     async submit() {
       //😍😍😍😍
       let catagory = "";
-      if (this.$route.name == "newadmin") catagory = "Admin";
-      if (this.$route.name == "newemp") catagory = "Employee";
+      if (this.$route.name == "newadmin") catagory = "Super";
+      if (this.$route.name == "newemp") catagory = "Admin";
       if (this.$route.name == "newtracker") catagory = "Tracker";
       if (this.$route.name == "newdeliveryboy") catagory = "Delivery Boy";
 
@@ -369,6 +369,7 @@ export default {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           Accept: "*/*",
+          Authorization: this.$store.state.user.token,
         },
         data,
       };
@@ -389,6 +390,7 @@ export default {
             "Content-Type": "application/json;charset=utf-8",
             "Access-Control-Allow-Origin": "*",
             Accept: "*/*",
+            Authorization: this.$store.state.user.token,
           },
           data,
         };

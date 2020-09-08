@@ -183,6 +183,7 @@ export default {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           Accept: "*/*",
+          Authorization: this.$store.state.user.token,
         },
         data: data,
       };

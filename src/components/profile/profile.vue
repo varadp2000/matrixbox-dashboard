@@ -144,6 +144,7 @@ export default {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
         Accept: "*/*",
+        Authorization: this.$store.state.user.token,
       },
     };
     let resp = await axios(config);

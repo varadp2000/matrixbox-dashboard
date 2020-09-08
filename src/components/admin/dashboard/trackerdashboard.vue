@@ -102,8 +102,8 @@ export default {
   created() {
     console.log(this.$store.state.isLoggedIn);
     if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
-    if (this.$store.state.user.type == "Employee")
-      this.$router.replace("/employee");
+    if (this.$store.state.user.type == "Super")
+      this.$router.replace("/superadmin");
     if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
   },
   methods: {

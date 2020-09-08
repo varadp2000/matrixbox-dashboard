@@ -48,13 +48,11 @@
             style="font-size:25px;color:white;margin-bottom:7px;margin-right:10px;"
             >fas fa-user</v-icon
           >Welcome {{ this.$store.state.user.user }}
+          <v-btn text style="color:white" @click="logout">Logout</v-btn>
         </p>
       </v-toolbar>
       <v-row>
-        <v-col
-          cols="1"
-          v-show="$route.name != 'login' && $route.name != 'empdashboard'"
-        >
+        <v-col cols="1" v-show="$store.state.user.type == 'Super'">
           <v-navigation-drawer
             v-show="$store.state.isLoggedIn"
             v-model="drawer"
@@ -73,8 +71,8 @@
               >
                 <v-list-item-icon>
                   <v-icon
-                    style="color:white;background-color:purple;font-size:30px;margin-left:5px"
-                    >fa-address-book</v-icon
+                    style="color:white;background-color:purple;font-size:25px;margin-left:-5px;padding:5px"
+                    >{{ btn.icon }}</v-icon
                   >
                 </v-list-item-icon>
                 <router-link
@@ -118,47 +116,60 @@ export default {
         {
           id: 8,
           name: "Dashboard",
-          routerlinks: "/admin/",
+          routerlinks: "/superadmin/",
+          icon: "fa fa-tachometer",
         },
-        {
+        /*{
           id: 0,
           name: "Add Admin",
-          routerlinks: "/admin/newadmin",
+          routerlinks: "/superadmin/newadmin",
         },
         {
           id: 1,
           name: "View Admin",
-          routerlinks: "/admin/viewadmin",
-        },
+          routerlinks: "/superadmin/viewadmin",
+        },*/
         {
           id: 2,
-          name: "Add Employee",
-          routerlinks: "/admin/newemployee",
+          name: "Add Admin",
+          routerlinks: "/superadmin/newadmin",
+          icon: "fas fa-plus-circle",
         },
         {
           id: 3,
-          name: "View Employee",
-          routerlinks: "/admin/viewemp",
+          name: "View Admin",
+          routerlinks: "/superadmin/viewemp",
+          icon: "fas fa-lock",
         },
         {
           id: 4,
           name: "Add Tracker",
-          routerlinks: "/admin/newtracker",
+          routerlinks: "/superadmin/newtracker",
+          icon: "fa fa-map-marker",
         },
         {
           id: 5,
           name: "View Tracker",
-          routerlinks: "/admin/viewtracker",
+          routerlinks: "/superadmin/viewtracker",
+          icon: "fa fa-users",
         },
         {
           id: 6,
           name: "Add Delivery Boy",
-          routerlinks: "/admin/newdeliveryboy",
+          routerlinks: "/superadmin/newdeliveryboy",
+          icon: "fas fa-truck",
         },
         {
           id: 7,
           name: "View Delivery Boy",
-          routerlinks: "/admin/viewdeliveryboy",
+          routerlinks: "/superadmin/viewdeliveryboy",
+          icon: "fa fa-id-card-o ",
+        },
+        {
+          id: 8,
+          name: "View Package List",
+          routerlinks: "/superadmin/packages",
+          icon: "fas fa-list ",
         },
       ],
       loading: false,
@@ -169,6 +180,20 @@ export default {
     setTimeout(() => {
       this.loading = false;
     }, 3000);
+  },
+  methods: {
+    logout() {
+      this.$store.state.user = {
+        email: "",
+        id: null,
+        type: null,
+        message: null,
+        user: null,
+        token: null,
+      };
+      this.$store.state.isLoggedIn = false;
+      this.$router.push("/admin/login");
+    },
   },
   components: {
     navbar,

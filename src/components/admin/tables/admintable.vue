@@ -56,7 +56,6 @@
           </td>
         </tr>
       </tbody>
-      {{ $route.name }}
     </v-simple-table>
   </div></template
 >
@@ -101,8 +100,8 @@ export default {
   },
   methods: {
     async getData() {
-      if (this.$route.name == "showadmin") this.category = "Admin";
-      if (this.$route.name == "showemp") this.category = "Employee";
+      if (this.$route.name == "showadmin") this.category = "Super Admin";
+      if (this.$route.name == "showemp") this.category = "Admin";
       if (this.$route.name == "showtracker") this.category = "Tracker";
       if (this.$route.name == "showdeliveryboy") this.category = "Delivery Boy";
 
@@ -113,6 +112,7 @@ export default {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           Accept: "*/*",
+          Authorization: this.$store.state.user.token,
         },
         data: {
           search: this.search,

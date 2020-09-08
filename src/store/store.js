@@ -6,6 +6,7 @@ const state = {
     type: null,
     message: null,
     user: null,
+    token: null,
   },
 };
 
