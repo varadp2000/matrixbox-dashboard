@@ -27,7 +27,7 @@
         <tr
           v-for="pkg in resp"
           :key="pkg.id"
-          @click="$router.push(`/admin/view/${pkg.id}`)"
+          @click="$router.push(`/superadmin/view/${pkg.id}`)"
         >
           <td>{{ pkg.id }}</td>
           <td>
