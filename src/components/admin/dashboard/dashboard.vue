@@ -1,6 +1,6 @@
 <template>
   <div style>
-    <v-row style="margin-top:10px">
+    <v-row style="margin-top:70px">
       <v-col cols="3">
         <v-card
           class="d-inline-block mx-auto"
@@ -15,10 +15,11 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                  emp
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Admins:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
@@ -39,40 +40,17 @@
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FF9700"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#FF9700">{{
+                  trck
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Trackers:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
-              ></i>
-            </v-col>
-            <v-col cols="2" />
-          </v-row>
-        </v-card>
-        <v-card
-          class="d-inline-block mx-auto"
-          height="150px"
-          style="width:100%;margin-bottom:30px"
-          shaped
-        >
-          <v-row>
-            <v-col cols="6" style="margin-top:30px;text-align:right;">
-              <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FD3550"
-                  >100</span
-                ><br />
-                <span style="font-size:20px">Total Employees:</span>
-              </p>
-            </v-col>
-            <v-col cols="2" style="text-align:left;">
-              <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-users"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -93,16 +71,17 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                  db
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Delivery Boys:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-baby-carriage"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -117,40 +96,17 @@
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FF9700"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#FF9700">{{
+                  pkgpend
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Pending Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
-              ></i>
-            </v-col>
-            <v-col cols="2" />
-          </v-row>
-        </v-card>
-        <v-card
-          class="d-inline-block mx-auto"
-          height="150px"
-          style="width:100%;margin-bottom:30px"
-          shaped
-        >
-          <v-row>
-            <v-col cols="6" style="margin-top:30px;text-align:right;">
-              <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FD3550"
-                  >100</span
-                ><br />
-                <span style="font-size:20px">Total Employees:</span>
-              </p>
-            </v-col>
-            <v-col cols="2" style="text-align:left;">
-              <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-clock"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -171,16 +127,17 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                  pkgdel
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Packages Delivered:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-check"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -196,39 +153,15 @@
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
                 <span style="font-size:30px;font-weight:bold;color:#FF9700"
-                  >100</span
+                  >50</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
-              ></i>
-            </v-col>
-            <v-col cols="2" />
-          </v-row>
-        </v-card>
-        <v-card
-          class="d-inline-block mx-auto"
-          height="150px"
-          style="width:100%;margin-bottom:30px"
-          shaped
-        >
-          <v-row>
-            <v-col cols="6" style="margin-top:30px;text-align:right;">
-              <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FD3550"
-                  >100</span
-                ><br />
-                <span style="font-size:20px">Total Employees:</span>
-              </p>
-            </v-col>
-            <v-col cols="2" style="text-align:left;">
-              <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-box"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -245,16 +178,17 @@
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FF7CC9"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#FF7CC9">{{
+                  todaypkg
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Todays Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-truck"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -270,40 +204,17 @@
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#62D1C2"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#62D1C2">{{
+                  todaydel
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Packages Delivered Today:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;padding:15px;color:lightgrey;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
-              ></i>
-            </v-col>
-            <v-col cols="2" />
-          </v-row>
-        </v-card>
-        <v-card
-          class="d-inline-block mx-auto"
-          height="150px"
-          style="width:100%;margin-bottom:30px"
-          shaped
-        >
-          <v-row>
-            <v-col cols="6" style="margin-top:30px;text-align:right;">
-              <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#ffee32"
-                  >100</span
-                ><br />
-                <span style="font-size:20px">Total Employees:</span>
-              </p>
-            </v-col>
-            <v-col cols="2" style="text-align:left;">
-              <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-archive"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -373,27 +284,44 @@
 </template>
 
 <script>
-const gradients = [
-  ["#61AB84"],
-  ["#42b3f4"],
-  ["red", "orange", "yellow"],
-  ["purple", "violet"],
-  ["#00c6ff", "#F0F", "#FF0"],
-  ["#f72047", "#ffd200", "#1feaea"],
-];
+import axios from "axios";
 export default {
   data: function() {
     return {
-      value: [423, 446, 675, 510, 590, 610, 760],
-      gradient: gradients[5],
+      emp: null,
+      db: null,
+      trck: null,
+      pkgpend: null,
+      pkgdel: null,
+      todaypkg: null,
+      todydel: null,
     };
   },
-  created() {
+  async created() {
     console.log(this.$store.state.isLoggedIn);
     if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
     if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
     if (this.$store.state.user.type == "Tracker")
       this.$router.replace("/tracker");
+
+    let config = {
+      method: "POST",
+      url: "https://api.matrixbox.in/admin/dashboard/status",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "*/*",
+        Authorization: this.$store.state.user.token,
+      },
+    };
+    let resp = await axios(config);
+    this.emp = resp.data.data.totalEmployee;
+    this.db = resp.data.data.deliveryBoysCount;
+    this.trck = resp.data.data.trackersCount;
+    this.pkgpend = resp.data.data.packagePending;
+    this.pkgdel = resp.data.data.packageDelivered;
+    this.todaypkg = resp.data.data.todayPackages;
+    this.todaydel = resp.data.data.todayAssignedPackage;
   },
 };
 </script>

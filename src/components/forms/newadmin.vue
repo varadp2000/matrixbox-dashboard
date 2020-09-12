@@ -364,7 +364,7 @@ export default {
       };
       let config = {
         method: "POST",
-        url: "http://matrixbox.in:3000/admin/employee/create",
+        url: "https://api.matrixbox.in/admin/employee/create",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
@@ -385,7 +385,7 @@ export default {
         };
         config = {
           method: "POST",
-          url: "http://matrixbox.in:3000/admin/auth/create",
+          url: "https://api.matrixbox.inmin/auth/create",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
             "Access-Control-Allow-Origin": "*",

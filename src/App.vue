@@ -70,10 +70,9 @@
                 link
               >
                 <v-list-item-icon>
-                  <v-icon
-                    style="color:white;background-color:purple;font-size:25px;margin-left:-5px;padding:5px"
-                    >{{ btn.icon }}</v-icon
-                  >
+                  <v-icon style="color:white;font-size:25px;margin-left:0px">{{
+                    btn.icon
+                  }}</v-icon>
                 </v-list-item-icon>
                 <router-link
                   style="color:white;text-decoration:none;"

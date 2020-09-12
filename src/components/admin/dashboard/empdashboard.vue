@@ -15,16 +15,17 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                  totalpkg
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-box"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -41,16 +42,17 @@
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FF9700"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#FF9700">{{
+                  totalassignedpkg
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Delivered:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-check"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -67,16 +69,17 @@
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#FD3550"
-                  >100</span
+                <span style="font-size:30px;font-weight:bold;color:#FD3550">{{
+                  pending
+                }}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Pending Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
                 style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
-                class="fas fa-users-cog"
+                class="fas fa-truck"
               ></i>
             </v-col>
             <v-col cols="2" />
@@ -120,7 +123,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="emp in employee" :key="emp.id">
+          <tr style="text-align:center" v-for="emp in employee" :key="emp.id">
             <td>{{ emp.id }}</td>
             <td>
               {{
@@ -207,52 +210,14 @@
 </template>
 
 <script>
-const gradients = [
-  ["#61AB84"],
-  ["#42b3f4"],
-  ["red", "orange", "yellow"],
-  ["purple", "violet"],
-  ["#00c6ff", "#F0F", "#FF0"],
-  ["#f72047", "#ffd200", "#1feaea"],
-];
 import axios from "axios";
 export default {
   data: function() {
     return {
-      value: [423, 446, 675, 510, 590, 610, 760],
-      gradient: gradients[5],
-      headers: [
-        {
-          text: "id",
-          value: "id",
-          aligb: "start",
-        },
-        {
-          text: "Name",
-          value: `fullname`,
-        },
-        {
-          text: "Phone",
-          value: "phone",
-        },
-        {
-          text: "Email",
-          value: "email",
-        },
-        {
-          text: "Location",
-          value: "area",
-        },
-        {
-          text: "Actions",
-          value: "actions",
-        },
-        {
-          text: "Status",
-          value: "id",
-        },
-      ],
       employee: [],
+      totalpkg: null,
+      totalassignedpkg: null,
+      pending: null,
     };
   },
   async created() {
@@ -265,7 +230,7 @@ export default {
     //if (!this.$store.state.isLoggedIn) this.$router.push("/employee/login");
     let config = {
       method: "POST",
-      url: "http://matrixbox.in:3000/admin/package/list",
+      url: "https://api.matrixbox.in/admin/package/list",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
@@ -284,10 +249,23 @@ export default {
         },
       },
     };
-
     let resp = await axios(config);
     this.employee = resp.data.data;
-    console.log(resp);
+
+    config = {
+      method: "POST",
+      url: "https://api.matrixbox.in/admin/dashboard/status",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "*/*",
+        Authorization: this.$store.state.user.token,
+      },
+    };
+    resp = await axios(config);
+    this.totalpkg = resp.data.data.totalPackage;
+    this.totalassignedpkg = resp.data.data.todayAssignedPackage;
+    this.pending = resp.data.data.packagePending;
   },
 };
 </script>

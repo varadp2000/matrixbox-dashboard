@@ -58,6 +58,6 @@
     "not dead"
   ],
   "devServer": {
-    "proxy": "http://matrixbox.in:3000"
+    "proxy": "https://matrixbox.in:3000"
   }
 }

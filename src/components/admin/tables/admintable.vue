@@ -107,7 +107,7 @@ export default {
 
       let config = {
         method: "POST",
-        url: "http://matrixbox.in:3000/admin/employee/list",
+        url: "https://api.matrixbox.in/admin/employee/list",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",

@@ -1,90 +1,112 @@
 <template>
   <div style="">
-    <h1 style="text-align:center;margin-top:30px;margin-bottom:20px">
-      Package Details
-    </h1>
-    <v-row>
-      <v-card width="33%" style="padding:20px">
-        <p>Sr No: {{ config.serialNumber }}</p>
-        <br />
-        <strong>Pickup name:</strong>
-        <p style="margin-left:100px">
-          {{ config.pickUpFirstName }} {{ config.pickUpMiddleName }}
-          {{ config.pickUpLastName }}
-        </p>
-        <strong>PickUp Email</strong>
-        <p style="margin-left:100px">{{ config.pickUpEmail }}</p>
-
-        <strong>PickUp Phone</strong>
-        <p style="margin-left:100px">{{ config.pickUpPhone }}</p>
-
-        <strong>PickUp Address</strong>
-        <p style="margin-left:100px">{{ config.pickUpAddress }}</p> </v-card
-      ><v-card width="33%" style="padding:20px;margin-left:0.5%">
-        <br />
-        <strong>Receiver name:</strong>
-        <p style="margin-left:100px">
-          {{ config.deliveryFirstName }} {{ config.deliveryMiddleName }}
-          {{ config.deliveryLastName }}
-        </p>
-        <strong>Receiver Email</strong>
-        <p style="margin-left:100px">{{ config.deliveryEmail }}</p>
-
-        <strong>Receiver Phone</strong>
-        <p style="margin-left:100px">{{ config.deliveryPhone }}</p>
-
-        <strong>Receiver Address</strong>
-        <p style="margin-left:100px">{{ config.deliveryAddress }}</p>
-      </v-card>
-      <v-card
-        v-if="!config.deliveryBoy && $store.state.user.type == 'Super'"
-        width="33%"
-        style="padding:20px;margin-left:0.5%"
+    <v-card>
+      <h1
+        style="text-align:center;padding-top:30px;padding-bottom:20px;border-bottom:solid"
       >
-        <Strong> Assign Delivery Boy </Strong><br />
-        <select
-          style="background-color:white;height:50px;border-radius:0px;padding:10px"
-          v-model="selEmp"
-        >
-          <option v-for="emp in list" :key="emp.id" :value="emp.id"
-            >{{ emp.firstName }} {{ emp.middleName }} {{ emp.lastName }}</option
-          > </select
-        ><br />
-        <v-btn
-          style="width:200px;height:40px;margin-top:20px;background-color:green;color:white"
-          @click="submit"
-          >Assign</v-btn
-        >
-      </v-card>
-      <v-card style="padding:20px;margin-left:0.5%" v-else
-        ><br />
-        <p>
-          <strong>Delivery Boy Name:</strong><br /><span
-            style="margin-left:50px"
+        Package Details
+      </h1>
+      <v-row>
+        <v-col cols="4">
+          <h2 style="margin-left:10px">Delivery Details</h2>
+          <br />
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">First Name:</strong
+            >{{ config.deliveryFirstName }}
+          </p>
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">Middle Name:</strong
+            >{{ config.deliveryMiddleName }}
+          </p>
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">Last Name:</strong
+            >{{ config.deliveryLastName }}
+          </p>
+          <br />
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">Address</strong><br />
+            {{ config.deliveryAddress }}
+          </p>
+        </v-col>
+        <v-col cols="4">
+          <h2 style="">Sender Details</h2>
+          <br />
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">First Name:</strong
+            >{{ config.pickUpFirstName }}
+          </p>
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">Middle Name:</strong
+            >{{ config.pickUpMiddleName }}
+          </p>
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">Last Name:</strong
+            >{{ config.pickUpLastName }}
+          </p>
+          <br />
+          <p style="padding-left:30px">
+            <strong style="margin-right:10px">Address</strong><br />
+            {{ config.pickUpAddress }}
+          </p>
+        </v-col>
+        <v-col cols="4" v-if="config.deliveryBoy != null"
+          ><h2>Delivery Boy Details</h2>
+          <br />
+          <p style="color:blue" v-if="config.isDelivered">I am Delivered</p>
+          <p style="color:green" v-else>Package Under Transit</p>
+          <br />
+          <p>
+            <strong style="margin-right:10px">First Name:</strong
+            >{{ db.firstName }}
+          </p>
+          <p>
+            <strong style="margin-right:10px">Middle Name:</strong
+            >{{ db.middleName }}
+          </p>
+          <p>
+            <strong style="margin-right:10px">Last Name:</strong
+            >{{ db.lastName }}
+          </p>
+          <br />
+          <p>
+            <strong style="margin-right:10px">Address:</strong><br />{{
+              db.permanentAddress
+            }}
+          </p>
+          <p><strong style="margin-right:10px">Tal:</strong>{{ db.tahsil }}</p>
+          <p>
+            <strong style="margin-right:10px">Dist:</strong>{{ db.district }}
+          </p>
+          <p>
+            <strong style="margin-right:10px">State:</strong>{{ db.region }}
+          </p>
+          <br />
+
+          <p><strong style="margin-right:10px">Phone:</strong>{{ db.phone }}</p>
+          <br />
+          <br />
+        </v-col>
+        <v-col cols="4" v-else>
+          <h2>Assign Delivery Boy</h2>
+          <br />
+          <p style="color:red">Package Has Been Received</p>
+          <br /><select
+            v-model="selEmp"
+            style="background-color:grey;width:80%;height:50px;margin-bottom:30px;padding-left:30px"
           >
-            {{ `${db.firstName} ${db.middleName} ${db.lastName}` }}</span
+            <option disabled value="-999">Select Employee</option>
+            <option v-for="emp in list" :key="emp.id" :value="emp.id"
+              >{{ emp.firstName }} {{ emp.middleName }}
+              {{ emp.lastName }}</option
+            > </select
+          ><br />
+
+          <v-btn @click="submit" style="color:white;background-color:green"
+            >Assign</v-btn
           >
-        </p>
-        <p>
-          <strong>Delivery Boy Address</strong><br /><span
-            style="margin-left:100px"
-            >{{ db.permanentAddress }}</span
-          >
-        </p>
-        <p>
-          <strong>Delivery Boy Phone</strong><br /><span
-            style="margin-left:100px"
-            >{{ db.phone }}</span
-          >
-        </p>
-        <p>
-          <strong>Delivery Boy Phone</strong><br /><span
-            style="margin-left:100px"
-            >{{ db.emergencyPhone }}</span
-          >
-        </p>
-      </v-card>
-    </v-row>
+        </v-col>
+      </v-row>
+    </v-card>
   </div>
 </template>
 
@@ -95,14 +117,14 @@ export default {
     return {
       config: null,
       list: null,
-      selEmp: null,
+      selEmp: -999,
       db: null,
     };
   },
   async created() {
     let config = {
       method: "GET",
-      url: "http://matrixbox.in:3000/admin/package/" + this.$route.params.id,
+      url: "https://api.matrixbox.in/admin/package/" + this.$route.params.id,
       headers: {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
@@ -114,7 +136,7 @@ export default {
     this.config = resp.data.data;
     config = {
       method: "POST",
-      url: "http://matrixbox.in:3000/admin/employee/list",
+      url: "https://api.matrixbox.in/admin/employee/list",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
@@ -137,7 +159,7 @@ export default {
     this.list = resp.data.data;
     config = {
       method: "GET",
-      url: "http://matrixbox.in:3000/admin/employee/" + this.config.deliveryBoy,
+      url: "https://api.matrixbox.in/admin/employee/" + this.config.deliveryBoy,
       headers: {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
@@ -150,9 +172,13 @@ export default {
   },
   methods: {
     async submit() {
+      if (this.selEmp == -999) {
+        alert("Select Proper EMployee");
+        return;
+      }
       let config = {
         method: "PATCH",
-        url: "http://matrixbox.in:3000/admin/package/assign",
+        url: "https://api.matrixbox.in/admin/package/assign",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
@@ -165,7 +191,7 @@ export default {
         },
       };
       await axios(config);
-      window.location.reload();
+      //window.location.reload();
     },
   },
 };

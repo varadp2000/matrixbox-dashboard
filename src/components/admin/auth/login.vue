@@ -5,7 +5,7 @@
         <img
           src="../../../assets/fulllogo.png"
           width="100%"
-          style="margin-top:20%"
+          style="margin-top:10%"
         />
       </v-col>
       <v-col cols="6">
@@ -83,7 +83,7 @@ export default {
       this.loading = true;
       const config = {
         method: "post",
-        url: "http://matrixbox.in:3000/admin/auth/login",
+        url: "https://api.matrixbox.in/admin/auth/login",
         headers: {
           "Content-Type": "application/json",
           "Access-Control-Allow-Credentials": "true",

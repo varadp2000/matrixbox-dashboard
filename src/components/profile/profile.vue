@@ -15,24 +15,26 @@
           <br />
           <div style="width:100%;height:2px;background-color:black" />
           <br />
-          <label style="">
-            First Name:
-          </label>
-          <h1 style="text-align:center;margin-right:70px">
-            <span>{{ fname }}</span>
-          </h1>
-          <label style="">
-            Middle Name:
-          </label>
-          <h1 style="text-align:center;margin-right:70px">
-            <span>{{ mname }}</span>
-          </h1>
-          <label style="">
-            Last Name:
-          </label>
-          <h1 style="text-align:center;margin-right:70px">
-            <span>{{ lname }}</span>
-          </h1>
+          <p>
+            First Name:<span
+              style="font-size:25px;font-weight:bold;margin-left:20px"
+              >{{ fname }}</span
+            >
+          </p>
+          <br />
+          <p>
+            Middle Name:<span
+              style="font-size:25px;font-weight:bold;margin-left:20px"
+              >{{ mname }}</span
+            >
+          </p>
+          <br />
+          <p>
+            Last Name:<span
+              style="font-size:25px;font-weight:bold;margin-left:20px"
+              >{{ lname }}</span
+            >
+          </p>
         </v-card>
       </v-col>
       <v-col>
@@ -43,18 +45,20 @@
           <br />
           {{ tAdd }}
           <br />
-          <div style="width:100%;height:2px;background-color:black" />
+          <div
+            style="width:100%;height:2px;background-color:black;margin-top:50%"
+          />
           <br />
           <p style="font-size:25px;text-decoration:underline">
             Permanent Address:
           </p>
           <br />
           {{ pAdd }}
-          <p>Dist: {{ dist }}</p>
-          <p>Tahsil: {{ tahsil }}</p>
-          <p>State: {{ state }}</p>
-          <p>Country:{{ country }}</p>
-          <p>PIN: {{ pin }}</p>
+          <p><strong>Dist:</strong> {{ dist }}</p>
+          <p><strong>Tal:</strong> {{ tahsil }}</p>
+          <p><strong>State:</strong> {{ state }}</p>
+          <p><strong>Country:</strong> {{ country }}</p>
+          <p><strong>PIN:</strong> {{ pin }}</p>
         </v-card>
       </v-col>
       <v-col>
@@ -102,7 +106,12 @@
             src="https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg"
             width="40%"
             style="margin-top:20px"
-          /><br />
+          />
+          <img
+            src="https://www.scienceworld.ca/wp-content/uploads/thumb-print-svg-hd-png-download-836x1024.png"
+            style="width:50px;margin-left:20px"
+          />
+          <br />
           Sign<br />
           <img
             src="https://www.docsketch.com/assets/vip-signatures/muhammad-ali-signature-6a40cd5a6c27559411db066f62d64886c42bbeb03b347237ffae98b0b15e0005.svg"
@@ -139,7 +148,7 @@ export default {
   async created() {
     const config = {
       method: "GET",
-      url: "http://matrixbox.in:3000/admin/employee/" + this.$route.params.id,
+      url: "https://api.matrixbox.in/admin/employee/" + this.$route.params.id,
       headers: {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",

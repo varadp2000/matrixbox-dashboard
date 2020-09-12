@@ -178,7 +178,7 @@ export default {
       console.log(data);
       const config = {
         method: "post",
-        url: "http://matrixbox.in:3000/admin/package/create",
+        url: "https://api.matrixbox.in/admin/package/create",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
@@ -202,7 +202,7 @@ export default {
     async getData() {
       let config = {
         method: "POST",
-        url: "http://matrixbox.in:3000/admin/package/list",
+        url: "https://api.matrixbox.inmin/package/list",
         headers: {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",

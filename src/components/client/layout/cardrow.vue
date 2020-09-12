@@ -16,7 +16,7 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <img
-                src="http://wpdemo.archiwp.com/engitech/wp-content/uploads/sites/4/2020/03/flipbox1.jpg"
+                src="https://wpdemo.archiwp.com/engitech/wp-content/uploads/sites/4/2020/03/flipbox1.jpg"
                 alt="Avatar"
                 style="width:100%;height:100%;"
               />
@@ -40,7 +40,7 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <img
-                src="http://wpdemo.archiwp.com/engitech/wp-content/uploads/sites/4/2020/03/flipbox2.jpg"
+                src="https://wpdemo.archiwp.com/engitech/wp-content/uploads/sites/4/2020/03/flipbox2.jpg"
                 alt="Avatar"
                 style="width:100%;height:100%;"
               />
@@ -63,7 +63,7 @@
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <v-img
-                src="http://wpdemo.archiwp.com/engitech/wp-content/uploads/sites/4/2020/03/flipbox3.jpg"
+                src="https://wpdemo.archiwp.com/engitech/wp-content/uploads/sites/4/2020/03/flipbox3.jpg"
                 alt="Avatar"
                 style="width:100%;height:100%;"
               >

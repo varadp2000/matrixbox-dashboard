@@ -1,6 +1,6 @@
 module.exports = {
   transpileDependencies: ["vuetify"],
   devServer: {
-    proxy: "http://matrixbox.in:3000/",
+    proxy: "https://api.matrixbox.in",
   },
 };
