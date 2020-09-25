@@ -135,6 +135,11 @@ const routes = [
     component: track,
     name: "track",
   },
+  {
+    path: "/superadmin/edit/:id",
+    component: newadmin,
+    name: "editemployee",
+  },
 ];
 
 export default routes;

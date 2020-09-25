@@ -278,6 +278,7 @@
         </v-col>
       </v-row>
     </v-form>
+    {{ $route.name }}
   </div>
 </template>
 
@@ -321,7 +322,7 @@ export default {
       policeStation: "",
       phn: "",
       ePhn: "",
-      mail: "",
+      email: "",
       prevpos: null,
       prevCmp: null,
       cat: null,
@@ -329,7 +330,42 @@ export default {
       cityName: null,
       uname: null,
       pass: null,
+      category: null,
     };
+  },
+  async created() {
+    if (this.$route.name == "editemployee") {
+      let config = {
+        method: "GET",
+        url: "https://api.matrixbox.in/admin/employee/" + this.$route.params.id,
+        headers: {
+          "Content-Type": "application/json;charset=utf-8",
+          "Access-Control-Allow-Origin": "*",
+          Accept: "*/*",
+          Authorization: this.$store.state.user.token,
+        },
+      };
+      let resp = await axios(config);
+      this.fname = resp.data.data.firstName;
+      (this.midname = resp.data.data.middleName),
+        (this.lname = resp.data.data.lastName);
+      this.tempAdd = resp.data.data.temporaryAddress;
+      (this.pAdd = resp.data.data.permanentAddress),
+        (this.dist = resp.data.data.district);
+      (this.addname = resp.data.data.addressType),
+        (this.tahsil = resp.data.data.tahsil);
+      this.post = resp.data.data.post;
+      this.policeStation = resp.data.data.policeStation;
+      this.phn = resp.data.data.phone;
+      this.ePhn = resp.data.data.emergencyPhone;
+      this.email = resp.data.data.email;
+      this.cat = resp.data.data.catagory;
+      this.vlgName = resp.data.data.addressName;
+      this.cityName = resp.data.data.addressName;
+      this.country = resp.data.data.country;
+      this.region = resp.data.data.region;
+      this.category = resp.data.data.category;
+    }
   },
   methods: {
     async submit() {
@@ -362,30 +398,11 @@ export default {
         previousCompany: this.prevCmp,
         category: catagory,
       };
-      let config = {
-        method: "POST",
-        url: "https://api.matrixbox.in/admin/employee/create",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-          "Access-Control-Allow-Origin": "*",
-          Accept: "*/*",
-          Authorization: this.$store.state.user.token,
-        },
-        data,
-      };
-      console.log(JSON.stringify(data));
-      let resp = await axios(config).catch((err) => (this.resp = err));
-      alert("User Registered Success");
-      if (catagory != "Delivery Boy") {
-        data = {
-          user: this.uname,
-          password: this.pass,
-          category: catagory,
-          email: this.email,
-        };
-        config = {
+      if (this.$route.name != "editemployee") {
+        console.log("HERE");
+        let config = {
           method: "POST",
-          url: "https://api.matrixbox.inmin/auth/create",
+          url: "https://api.matrixbox.in/admin/employee/create",
           headers: {
             "Content-Type": "application/json;charset=utf-8",
             "Access-Control-Allow-Origin": "*",
@@ -394,10 +411,54 @@ export default {
           },
           data,
         };
-        resp = await axios(config).catch((err) => (this.resp = err));
-        console.log(resp);
+        let resp = await axios(config).catch((err) => (this.resp = err));
+        alert("User Registered Success");
+        if (catagory != "Delivery Boy" && this.$route.name != "editemployee") {
+          data = {
+            user: this.uname,
+            password: this.pass,
+            category: catagory,
+            email: this.email,
+          };
+          config = {
+            method: "POST",
+            url: "https://api.matrixbox.inmin/auth/create",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+              "Access-Control-Allow-Origin": "*",
+              Accept: "*/*",
+              Authorization: this.$store.state.user.token,
+            },
+            data,
+          };
+          resp = await axios(config).catch((err) => (this.resp = err));
+          console.log(resp);
+        }
+        this.$router.replace("/superadmin");
+      } else {
+        data.category = this.category;
+        let config = {
+          method: "PUT",
+          url:
+            "https://api.matrixbox.in/admin/employee/" + this.$route.params.id,
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+            "Access-Control-Allow-Origin": "*",
+            Accept: "*/*",
+            Authorization: this.$store.state.user.token,
+          },
+          data,
+        };
+        try {
+          console.log(JSON.stringify(config.data));
+          await axios(config);
+          alert("Edit Successful");
+          this.$router.push("/superadmin");
+        } catch (err) {
+          alert("Update Failed");
+          console.log(err);
+        }
       }
-      this.$router.replace("/admin");
     },
   },
 };

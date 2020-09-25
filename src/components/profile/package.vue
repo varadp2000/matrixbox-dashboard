@@ -84,7 +84,20 @@
 
           <p><strong style="margin-right:10px">Phone:</strong>{{ db.phone }}</p>
           <br />
-          <br />
+          <h2>Reassign Delivery Boy</h2>
+          <br /><select
+            v-model="selEmp"
+            style="background-color:grey;width:80%;height:50px;margin-bottom:30px;padding-left:30px"
+          >
+            <option disabled value="-999">Select Employee</option>
+            <option v-for="emp in list" :key="emp.id" :value="emp.id"
+              >{{ emp.firstName }} {{ emp.middleName }}
+              {{ emp.lastName }}</option
+            ></select
+          >
+          <v-btn @click="submit" style="color:white;background-color:green"
+            >Assign</v-btn
+          >
         </v-col>
         <v-col cols="4" v-else>
           <h2>Assign Delivery Boy</h2>
@@ -120,6 +133,11 @@ export default {
       selEmp: -999,
       db: null,
     };
+  },
+  watch: {
+    db(val) {
+      this.db = val;
+    },
   },
   async created() {
     let config = {
@@ -191,6 +209,19 @@ export default {
         },
       };
       await axios(config);
+
+      config = {
+      method: "GET",
+      url: "https://api.matrixbox.in/admin/employee/" + this.selEmp,
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "*/*",
+        Authorization: this.$store.state.user.token,
+      },
+    };
+    let resp = await axios(config);
+    this.db = resp.data.data;
       //window.location.reload();
     },
   },

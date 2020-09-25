@@ -16,9 +16,9 @@
             >
               <p style="font-style:50px">
                 <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >100</span
+                  >{{tdpkg}}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Today Package:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
@@ -45,9 +45,9 @@
             >
               <p style="font-style:50px">
                 <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >100</span
+                  >{{totalpkg}}</span
                 ><br />
-                <span style="font-size:20px">Total Employees:</span>
+                <span style="font-size:20px">Total Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
@@ -83,6 +83,7 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
   name: "GoogleMap",
   data() {
@@ -93,21 +94,39 @@ export default {
       markers: [],
       places: [],
       currentPlace: null,
+      tdpkg:null,
+      totalpkg:null
     };
   },
 
   mounted() {
     this.geolocate();
   },
-  created() {
+  async created() {
     console.log(this.$store.state.isLoggedIn);
     if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
     if (this.$store.state.user.type == "Super")
       this.$router.replace("/superadmin");
     if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
+
+    let config = {
+      method: "POST",
+      url: "https://api.matrixbox.in/admin/dashboard/status",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        "Access-Control-Allow-Origin": "*",
+        Accept: "*/*",
+        Authorization: this.$store.state.user.token,
+      },
+    };
+    let resp = await axios(config);
+    console.log(resp)
+    this.tdpkg = 1
+    this.totalpkg = resp.data.data.totalPackage
+
   },
   methods: {
-    // receives a place object via the autocomplete component
+    
     setPlace(place) {
       this.currentPlace = place;
     },

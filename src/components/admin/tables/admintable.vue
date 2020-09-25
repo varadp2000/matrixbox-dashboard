@@ -21,14 +21,11 @@
             Phone
           </td>
           <td @click="sortBy = 'address'">Address</td>
+          <td>Actions</td>
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="pkg in resp"
-          :key="pkg.id"
-          @click="$router.push(`/superadmin/view/${pkg.id}`)"
-        >
+        <tr v-for="pkg in resp" :key="pkg.id">
           <td>{{ pkg.id }}</td>
           <td>
             {{ `${pkg.firstName} ${pkg.middleName} ${pkg.lastName}` }}
@@ -36,6 +33,10 @@
           <td>{{ pkg.email }}</td>
           <td>{{ pkg.phone }}</td>
           <td>{{ pkg.temporaryAddress }}</td>
+          <td>
+            <p @click="$router.push(`/superadmin/view/${pkg.id}`)">View</p>
+            <p @click="$router.push(`/superadmin/edit/${pkg.id}`)">Edit</p>
+          </td>
         </tr>
         <tr>
           <td>
