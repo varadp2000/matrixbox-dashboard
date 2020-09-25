@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <v-row style="height:135px;background-color:#6d0000;color:white;">
+      <v-row style="height:135px;background-color:#16656D;color:white;">
         <div
           class="lowerTriangle"
           style="position:absolute;left:469px;top:-4px;"/>
         <v-row
-          style="width:100%;height:20px;font-size:10px;margin-bottom:10px;positiob:fixed"
+          style="width:100%;height:20px;font-size:10px;margin-bottom:10px;"
         >
           <v-col cols="4">
             <img
@@ -17,7 +17,7 @@
           </v-col>
           <v-col
             cols="8"
-            style="background-color:black;color:white;height:30px;padding-bottom:3px"
+            style="background-color:#F8A555;color:white;height:30px;padding-bottom:3px;border-bottom-left-radius:999px"
           >
             <v-btn
               style="height:10px;font-size:10px;margin-bottom:12px"
@@ -53,7 +53,7 @@
         >
         <v-col cols="2" style="height:70px"
           ><v-btn
-            style="color:#6D0000;background-color:white;margin-top:9px"
+            style="color:#16656D;background-color:white;margin-top:9px"
             outlined
             dark
             @click="$router.push('/admin')"
@@ -64,10 +64,10 @@
           class="bottomTriangle"
           style="position:absolute;right:331px;top:126px"/>
 
-        <v-row style="color:white;margin-top:10px;z-index:999;">
+        <v-row style="color:white;margin-top:10px;z-index:999;border-bottom-left-radius:999px;border-bottom-right-radius:999px">
           <v-col
             cols="9"
-            style="background-color:white;color:#6D0000;padding-left:40px;height:50px;padding-bottom:30px;"
+            style="background-color:white;color:#6D0000;padding-left:40px;height:50px;padding-bottom:30px;border-top-right-radius:999px"
           >
             <v-btn
               style="color:#6D0000;margin-left:5px;font-size:15px;height:30px;margin-bottom:10px"
@@ -156,16 +156,5 @@ export default {
     display: block;
   }
 }
-.lowerTriangle {
-  border-left: 23px solid transparent;
-  border-right: 23px solid transparent;
-  border-bottom: 23px solid black;
-  transform: rotate(45deg);
-}
-.bottomTriangle {
-  border-left: 28px solid transparent;
-  border-right: 28px solid transparent;
-  border-bottom: 28px solid white;
-  transform: rotate(-135deg);
-}
+
 </style>

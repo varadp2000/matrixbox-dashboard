@@ -136,7 +136,7 @@ export default {};
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: #16656D;
   color: white;
   transform: rotateY(180deg);
 }

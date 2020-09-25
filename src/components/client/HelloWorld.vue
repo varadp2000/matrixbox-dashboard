@@ -29,20 +29,20 @@
           Delivered With Secure Layers
         </p>
         <div
-          style="background-color:#6D0000;width:50%;height:600px;margin-left:50%;"
+          style="background-color:#F8A555;width:50%;height:600px;margin-left:50%;"
         >
           <svg
             style="margin-top:50px;margin-left:-300px"
             height="100"
             width="100"
           >
-            <circle cx="50" cy="50" r="40" fill="#771515"></circle>
+            <circle cx="50" cy="50" r="40" fill="#16656D"></circle>
           </svg>
           <svg style="margin-top:50px" height="100" width="100">
-            <circle cx="50" cy="50" r="40" fill="#771515"></circle>
+            <circle cx="50" cy="50" r="40" fill="#16656D"></circle>
           </svg>
           <svg style="margin-top:50px" height="100" width="100">
-            <circle cx="50" cy="50" r="40" fill="#771515"></circle>
+            <circle cx="50" cy="50" r="40" fill="#16656D"></circle>
           </svg>
           <svg style="margin-top:50px" height="100" width="100">
             <circle cx="50" cy="50" r="40" fill="white"></circle>

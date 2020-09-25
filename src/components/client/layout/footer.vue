@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="background-color:#4F0000;height:230px">
+    <div style="background-color:#16656D;height:230px">
       <v-row style="height:30px" />
       <v-row>
         <v-col cols="1" />

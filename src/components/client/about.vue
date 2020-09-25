@@ -242,7 +242,7 @@ export default {};
     padding: 20px;
     display: flex;
     .shape {
-      background: black;
+      background: orange;
       opacity: 0.8;
       height: 30em;
       width: 75em;
@@ -260,7 +260,7 @@ export default {};
     }
     .shape::before {
       position: absolute;
-      background: black none repeat scroll 0 0;
+      background: orange none repeat scroll 0 0;
       content: "";
       height: 30em;
       right: -10em;
@@ -284,7 +284,7 @@ export default {};
     height: 50px;
     transform: skewY(1deg);
     position: absolute;
-    background-color: black;
+    background-color: orange;
     left: 0;
     right: 0;
     z-index: -1;
