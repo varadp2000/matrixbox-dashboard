@@ -217,13 +217,16 @@ export default {
       employee: [],
       totalpkg: null,
       totalassignedpkg: null,
-      pending: null,
+      pending: null
     };
   },
   async created() {
     console.log(this.$store.state.isLoggedIn);
     if (!this.$store.state.isLoggedIn) this.$router.push("/superadmin/login");
-    if (this.$store.state.user.type == "Super")
+    if (
+      this.$store.state.user.type == "Super" ||
+      this.$store.state.user.type == "Admin"
+    )
       this.$router.replace("/superadmin");
     if (this.$store.state.user.type == "Tracker")
       this.$router.replace("/tracker");
@@ -235,7 +238,7 @@ export default {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
         Accept: "*/*",
-        Authorization: this.$store.state.user.token,
+        Authorization: this.$store.state.user.token
       },
       data: {
         search: "",
@@ -245,9 +248,9 @@ export default {
           page: 1,
           rowsPerPage: 100,
           sortBy: "id",
-          descending: true,
-        },
-      },
+          descending: true
+        }
+      }
     };
     let resp = await axios(config);
     this.employee = resp.data.data;
@@ -259,14 +262,14 @@ export default {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
         Accept: "*/*",
-        Authorization: this.$store.state.user.token,
-      },
+        Authorization: this.$store.state.user.token
+      }
     };
     resp = await axios(config);
     this.totalpkg = resp.data.data.totalPackage;
     this.totalassignedpkg = resp.data.data.todayAssignedPackage;
     this.pending = resp.data.data.packagePending;
-  },
+  }
 };
 </script>
 

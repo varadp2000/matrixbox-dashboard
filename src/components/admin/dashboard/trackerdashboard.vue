@@ -15,8 +15,9 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >{{tdpkg}}</span
+                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                  tdpkg
+                }}</span
                 ><br />
                 <span style="font-size:20px">Today Package:</span>
               </p>
@@ -44,8 +45,9 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa"
-                  >{{totalpkg}}</span
+                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                  totalpkg
+                }}</span
                 ><br />
                 <span style="font-size:20px">Total Packages:</span>
               </p>
@@ -83,7 +85,7 @@
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 export default {
   name: "GoogleMap",
   data() {
@@ -94,8 +96,8 @@ export default {
       markers: [],
       places: [],
       currentPlace: null,
-      tdpkg:null,
-      totalpkg:null
+      tdpkg: null,
+      totalpkg: null
     };
   },
 
@@ -105,9 +107,13 @@ export default {
   async created() {
     console.log(this.$store.state.isLoggedIn);
     if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
-    if (this.$store.state.user.type == "Super")
+    if (
+      this.$store.state.user.type == "Super" ||
+      this.$store.state.user.type == "Admin"
+    )
       this.$router.replace("/superadmin");
-    if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
+    if (this.$store.state.user.type == "employee")
+      this.$router.replace("/employee");
 
     let config = {
       method: "POST",
@@ -116,17 +122,15 @@ export default {
         "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
         Accept: "*/*",
-        Authorization: this.$store.state.user.token,
-      },
+        Authorization: this.$store.state.user.token
+      }
     };
     let resp = await axios(config);
-    console.log(resp)
-    this.tdpkg = 1
-    this.totalpkg = resp.data.data.totalPackage
-
+    console.log(resp);
+    this.tdpkg = 1;
+    this.totalpkg = resp.data.data.totalPackage;
   },
   methods: {
-    
     setPlace(place) {
       this.currentPlace = place;
     },
@@ -134,7 +138,7 @@ export default {
       if (this.currentPlace) {
         const marker = {
           lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng(),
+          lng: this.currentPlace.geometry.location.lng()
         };
         this.markers.push({ position: marker });
         this.places.push(this.currentPlace);
@@ -143,14 +147,14 @@ export default {
       }
     },
     geolocate: function() {
-      navigator.geolocation.getCurrentPosition((position) => {
+      navigator.geolocation.getCurrentPosition(position => {
         this.center = {
           lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          lng: position.coords.longitude
         };
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

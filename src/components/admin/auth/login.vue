@@ -105,7 +105,7 @@ export default {
         this.$store.state.user.user = resp.data.data.user;
         this.$store.state.user.token = resp.data.data.token;
 
-        this.$router.push("/admin");
+        this.$router.push("/employee");
       } catch (err) {
         alert("Enter Valid UserName and Password");
         console.log(err);

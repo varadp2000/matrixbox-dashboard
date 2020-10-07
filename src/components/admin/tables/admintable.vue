@@ -58,8 +58,7 @@
         </tr>
       </tbody>
     </v-simple-table>
-  </div></template
->
+  </div></template>
 
 <script>
 import axios from "axios";
@@ -75,7 +74,7 @@ export default {
       resp: null,
       items: ["Foo", "Bar", "Fizz", "Buzz"],
       maxRows: null,
-      category: "admin",
+      category: "admin"
     };
   },
   async created() {
@@ -97,12 +96,13 @@ export default {
     async rowsPerPage(val) {
       this.rowsPerPage = val;
       await this.getData();
-    },
+    }
   },
   methods: {
     async getData() {
       if (this.$route.name == "showadmin") this.category = "Super Admin";
       if (this.$route.name == "showemp") this.category = "Admin";
+      if (this.$route.name == "showemployee") this.category = "Employee";
       if (this.$route.name == "showtracker") this.category = "Tracker";
       if (this.$route.name == "showdeliveryboy") this.category = "Delivery Boy";
 
@@ -113,7 +113,7 @@ export default {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           Accept: "*/*",
-          Authorization: this.$store.state.user.token,
+          Authorization: this.$store.state.user.token
         },
         data: {
           search: this.search,
@@ -123,17 +123,17 @@ export default {
             page: this.page,
             rowsPerPage: this.rowsPerPage,
             sortBy: this.sortBy,
-            descending: this.descending,
-          },
-        },
+            descending: this.descending
+          }
+        }
       };
-      let resp = await axios(config).catch((err) => (this.resp = err));
+      let resp = await axios(config).catch(err => (this.resp = err));
       this.resp = resp.data.data;
       this.maxRows = Math.ceil(
         resp.data.pagination.rowsNumber / this.rowsPerPage
       );
-    },
-  },
+    }
+  }
 };
 </script>
 

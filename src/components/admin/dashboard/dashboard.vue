@@ -300,7 +300,8 @@ export default {
   async created() {
     console.log(this.$store.state.isLoggedIn);
     if (!this.$store.state.isLoggedIn) this.$router.push("/admin/login");
-    if (this.$store.state.user.type == "Admin") this.$router.replace("/admin");
+    if (this.$store.state.user.type == "Employee")
+      this.$router.replace("/employee");
     if (this.$store.state.user.type == "Tracker")
       this.$router.replace("/tracker");
 

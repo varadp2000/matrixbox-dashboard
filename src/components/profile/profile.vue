@@ -8,7 +8,9 @@
         >
           <div style="text-align:center">
             <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
+              :src="
+                imguri + dp || 'https://www.w3schools.com/howto/img_avatar.png'
+              "
               style="height:200px;width:200px;border-radius:999px;"
             />
           </div>
@@ -103,18 +105,39 @@
           </v-row>
           Aadhar Card:<br />
           <img
-            src="https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg"
+            :src="
+              af
+                ? imguri + af
+                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
+            "
             width="40%"
             style="margin-top:20px"
           />
           <img
-            src="https://www.scienceworld.ca/wp-content/uploads/thumb-print-svg-hd-png-download-836x1024.png"
+            :src="
+              ab
+                ? imguri + ab
+                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
+            "
             style="width:50px;margin-left:20px"
           />
-          <br />
+          <br /><br />
+          Fingerprint<br />
+          <img
+            :src="
+              fp
+                ? imguri + fp
+                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
+            "
+            style="width:50px;margin-left:20px"
+          /><br /><br />
           Sign<br />
           <img
-            src="https://www.docsketch.com/assets/vip-signatures/muhammad-ali-signature-6a40cd5a6c27559411db066f62d64886c42bbeb03b347237ffae98b0b15e0005.svg"
+            :src="
+              sign
+                ? imguri + sign
+                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
+            "
             width="25%"
           />
         </v-card>
@@ -143,6 +166,12 @@ export default {
       state: null,
       country: null,
       pin: null,
+      imguri: "https://image.matrixbox.in/employee/",
+      dp: null,
+      af: null,
+      ab: null,
+      sign: null,
+      fp: null,
     };
   },
   async created() {
@@ -157,6 +186,7 @@ export default {
       },
     };
     let resp = await axios(config);
+    console.log(resp);
     this.fname = resp.data.data.firstName;
     this.mname = resp.data.data.middleName;
     this.lname = resp.data.data.lastName;
@@ -172,6 +202,12 @@ export default {
       (this.country = resp.data.data.country),
       (this.PIN = resp.data.data.post);
     this.id = this.$route.params.id;
+    this.dp = resp.data.data.image;
+    this.af = resp.data.data.aadharFront;
+    this.ab = resp.data.data.aadharBack;
+    this.sign = resp.data.data.sign;
+    this.fingerprint = resp.data.data.fingerprint;
+    console.log(this.imguri + this.dp);
   },
 };
 </script>

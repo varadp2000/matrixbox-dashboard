@@ -71,12 +71,22 @@ const routes = [
     name: "showadmin",
   },
   {
+    path: "/superadmin/newemployee",
+    component: newadmin,
+    name: "newemployee",    
+  },
+  {
+    path: "/superadmin/viewemployee",
+    component: viewadmin,
+    name: "showemployee",
+  },
+  {
     path: "/superadmin/view/:id",
     component: profile,
     name: "profile",
   },
   {
-    path: "/admin/addpackage",
+    path: "/employee/addpackage",
     component: addpackage,
     name: "addpkg",
   },
@@ -111,7 +121,7 @@ const routes = [
     name: "showdeliveryboy",
   },
   {
-    path: "/admin",
+    path: "/employee",
     component: empdashboard,
     name: "empdashboard",
   },
@@ -126,7 +136,7 @@ const routes = [
     name: "packages",
   },
   {
-    path: "/admin/package/:id",
+    path: "/employee/package/:id",
     component: packaged,
     name: "showPackage",
   },

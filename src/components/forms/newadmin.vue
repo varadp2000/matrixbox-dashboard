@@ -174,7 +174,7 @@
                 :items="states"
                 v-model="edu"
                 Placeholder="Educational Qualification"
-                :rules="[(e) => e != 1 || 'Select Educational Qualification']"
+                :rules="[e => e != 1 || 'Select Educational Qualification']"
               >
                 <option value="1">Select Education</option>
                 <option value="2">10th</option>
@@ -263,7 +263,7 @@
             <v-checkbox
               label="I Agree Terms And Conditions"
               style="margin-left:11px;padding-right:5px"
-              :rules="[(e) => e || 'You must agree terms and conditions.']"
+              :rules="[e => e || 'You must agree terms and conditions.']"
             ></v-checkbox>
             <v-btn
               style="margin-left:11px;width:250px;margin-top:5px;background-color:red;color:white"
@@ -293,7 +293,7 @@ export default {
         "Diploma",
         "Degree(Graduation)",
         "Post Graduation",
-        "Ph.D",
+        "Ph.D"
       ],
       edu: 1,
       img: null,
@@ -304,7 +304,7 @@ export default {
         "Diploma",
         "Degree(Graduation)",
         "Post Graduation",
-        "Ph.D",
+        "Ph.D"
       ],
       country: "",
       region: "",
@@ -330,7 +330,7 @@ export default {
       cityName: null,
       uname: null,
       pass: null,
-      category: null,
+      category: null
     };
   },
   async created() {
@@ -342,8 +342,8 @@ export default {
           "Content-Type": "application/json;charset=utf-8",
           "Access-Control-Allow-Origin": "*",
           Accept: "*/*",
-          Authorization: this.$store.state.user.token,
-        },
+          Authorization: this.$store.state.user.token
+        }
       };
       let resp = await axios(config);
       this.fname = resp.data.data.firstName;
@@ -371,11 +371,10 @@ export default {
     async submit() {
       //😍😍😍😍
       let catagory = "";
-      if (this.$route.name == "newadmin") catagory = "Super";
       if (this.$route.name == "newemp") catagory = "Admin";
+      if (this.$route.name == "newemployee") catagory = "Employee";
       if (this.$route.name == "newtracker") catagory = "Tracker";
       if (this.$route.name == "newdeliveryboy") catagory = "Delivery Boy";
-
       let data = {
         firstName: this.fname,
         middleName: this.midname,
@@ -396,7 +395,7 @@ export default {
         previousWork: this.wex,
         previousPosition: this.prevpos,
         previousCompany: this.prevCmp,
-        category: catagory,
+        category: catagory
       };
       if (this.$route.name != "editemployee") {
         console.log("HERE");
@@ -407,31 +406,31 @@ export default {
             "Content-Type": "application/json;charset=utf-8",
             "Access-Control-Allow-Origin": "*",
             Accept: "*/*",
-            Authorization: this.$store.state.user.token,
+            Authorization: this.$store.state.user.token
           },
-          data,
+          data
         };
-        let resp = await axios(config).catch((err) => (this.resp = err));
+        let resp = await axios(config).catch(err => (this.resp = err));
         alert("User Registered Success");
         if (catagory != "Delivery Boy" && this.$route.name != "editemployee") {
           data = {
             user: this.uname,
             password: this.pass,
             category: catagory,
-            email: this.email,
+            email: this.email
           };
           config = {
             method: "POST",
-            url: "https://api.matrixbox.inmin/auth/create",
+            url: "https://api.matrixbox.in/admin/auth/create",
             headers: {
               "Content-Type": "application/json;charset=utf-8",
               "Access-Control-Allow-Origin": "*",
               Accept: "*/*",
-              Authorization: this.$store.state.user.token,
+              Authorization: this.$store.state.user.token
             },
-            data,
+            data
           };
-          resp = await axios(config).catch((err) => (this.resp = err));
+          resp = await axios(config).catch(err => (this.resp = err));
           console.log(resp);
         }
         this.$router.replace("/superadmin");
@@ -445,9 +444,9 @@ export default {
             "Content-Type": "application/json;charset=utf-8",
             "Access-Control-Allow-Origin": "*",
             Accept: "*/*",
-            Authorization: this.$store.state.user.token,
+            Authorization: this.$store.state.user.token
           },
-          data,
+          data
         };
         try {
           console.log(JSON.stringify(config.data));
@@ -459,8 +458,8 @@ export default {
           console.log(err);
         }
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

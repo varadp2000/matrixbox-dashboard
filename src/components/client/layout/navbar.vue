@@ -56,7 +56,7 @@
             style="color:#16656D;background-color:white;margin-top:9px"
             outlined
             dark
-            @click="$router.push('/admin')"
+            @click="$router.push('/superadmin')"
             >EMPLOYEE LOGIN</v-btn
           ></v-col
         >

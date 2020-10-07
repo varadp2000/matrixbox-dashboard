@@ -19,7 +19,7 @@
       >
         <v-card-title
           class="headline grey lighten-2 text-center"
-          style="background-color:#6D0000"
+          style="background-color:#16656D"
         >
           <img src="../../assets/logo.png" width="200px" /> <v-spacer />
           <v-btn style="color:white;background-color:orange;margin-right:50px"
