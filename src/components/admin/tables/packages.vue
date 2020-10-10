@@ -35,7 +35,7 @@
         <tr
           v-for="pkg in resp"
           :key="pkg.id"
-          @click="$router.push(`/admin/package/${pkg.id}`)"
+          @click="$router.push(`/employee/package/${pkg.id}`)"
         >
           <td>{{ pkg.id }}</td>
           <td>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-simple-table>
+    <v-simple-table style="width:100%;padding-left:30px">
       <thead>
         <tr>
           <v-text-field
@@ -20,7 +20,7 @@
           <td @click="sortBy = 'phone'">
             Phone
           </td>
-          <td @click="sortBy = 'address'">Address</td>
+          <!--<td @click="sortBy = 'address'">Address</td>-->
           <td>Actions</td>
         </tr>
       </thead>
@@ -32,10 +32,10 @@
           </td>
           <td>{{ pkg.email }}</td>
           <td>{{ pkg.phone }}</td>
-          <td>{{ pkg.temporaryAddress }}</td>
-          <td>
-            <p @click="$router.push(`/superadmin/view/${pkg.id}`)">View</p>
-            <p @click="$router.push(`/superadmin/edit/${pkg.id}`)">Edit</p>
+          <!--<td>{{ pkg.temporaryAddress }}</td>-->
+          <td >
+              <v-btn outlined style="width:20px;padding:2px;margin-right:5px;color:green" @click="$router.push(`/superadmin/view/${pkg.id}`)">View</v-btn>
+              <v-btn outlined style="width:20px;padding:2px;color:red" @click="$router.push(`/superadmin/edit/${pkg.id}`)">Edit</v-btn>
           </td>
         </tr>
         <tr>

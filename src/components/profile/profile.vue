@@ -8,8 +8,8 @@
         >
           <div style="text-align:center">
             <img
-              :src="
-                imguri + dp || 'https://www.w3schools.com/howto/img_avatar.png'
+              :src="dp?
+                imguri + dp : 'https://www.w3schools.com/howto/img_avatar.png'
               "
               style="height:200px;width:200px;border-radius:999px;"
             />
@@ -18,22 +18,22 @@
           <div style="width:100%;height:2px;background-color:black" />
           <br />
           <p>
-            First Name:<span
-              style="font-size:25px;font-weight:bold;margin-left:20px"
+            <strong>First Name:</strong><span
+              style="font-size:25px;margin-left:20px"
               >{{ fname }}</span
             >
           </p>
           <br />
           <p>
-            Middle Name:<span
-              style="font-size:25px;font-weight:bold;margin-left:20px"
+            <strong>Middle Name:</strong><span
+              style="font-size:25px;margin-left:20px"
               >{{ mname }}</span
             >
           </p>
           <br />
           <p>
-            Last Name:<span
-              style="font-size:25px;font-weight:bold;margin-left:20px"
+            <strong>Last Name:</strong><span
+              style="font-size:25px;margin-left:20px"
               >{{ lname }}</span
             >
           </p>
@@ -53,9 +53,9 @@
           <br />
           <p style="font-size:25px;text-decoration:underline">
             Permanent Address:
-          </p>
-          <br />
+          </p><br/>
           {{ pAdd }}
+          <br/><br/>
           <p><strong>Dist:</strong> {{ dist }}</p>
           <p><strong>Tal:</strong> {{ tahsil }}</p>
           <p><strong>State:</strong> {{ state }}</p>
@@ -117,28 +117,30 @@
             :src="
               ab
                 ? imguri + ab
-                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
-            "
-            style="width:50px;margin-left:20px"
+                : 'https://www.newsbugz.com/wp-content/uploads/2018/03/Aadhaar-Card-1-1-700x450.png'
+            " width="40%"
+            style="margin-top:20px"
+            
           />
           <br /><br />
-          Fingerprint<br />
+          Fingerprint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="margin-left:40px">Sign</span><br/><br/>
           <img
             :src="
               fp
                 ? imguri + fp
-                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
+                : 'https://www.m2sys.com/blog/wp-content/uploads/2013/10/fingerprint-for-video-D.jpg'
             "
-            style="width:50px;margin-left:20px"
-          /><br /><br />
-          Sign<br />
+            style="width:70px;margin-left:20px"
+          />
+          
           <img
             :src="
               sign
                 ? imguri + sign
-                : 'https://spiderimg.amarujala.com/assets/images/2017/12/02/750x506/demo-pic_1512220322.jpeg'
+                : 'https://daily.jstor.org/wp-content/uploads/2014/11/NapoleonSignature2_1050x700.jpg'
             "
-            width="25%"
+            width="30%"
+            style="margin-left:30px;margin-top:-40px"
           />
         </v-card>
       </v-col>

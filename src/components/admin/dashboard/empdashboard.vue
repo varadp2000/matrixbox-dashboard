@@ -91,7 +91,7 @@
           height="150px"
           style="width:100%;margin-bottom:30px"
           shaped
-          @click="$router.push('/admin/addpackage')"
+          @click="$router.push('/employee/addpackage')"
         >
           <v-row>
             <v-col cols="6" style="margin-top:30px;text-align:right;">
@@ -138,7 +138,7 @@
             <td>{{ emp.deliveryAddress }}</td>
             <td>
               <v-icon
-                @click="$router.push(`/admin/package/${emp.id}`)"
+                @click="$router.push(`/employee/package/${emp.id}`)"
                 style="color:green;margin-right:10px"
                 >fas fa-eye</v-icon
               >

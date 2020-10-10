@@ -39,7 +39,7 @@
         <v-toolbar-title style=" color:white;font-size:50px;font-weight:bold;"
           ><img
             src="./assets/logo.png"
-            height="114px"
+            height="100px"
             style="padding-top:30px;padding-left:5px"
         /></v-toolbar-title>
         <v-spacer></v-spacer>
@@ -71,12 +71,12 @@
             <v-list dense nav style="height:60px;margion-top:30px">
               <v-list-item
                 v-for="btn in btns"
-                style="height:60px;margin-right:10px"
+                style="height:50px;margin-right:10px"
                 :key="btn.id"
                 link
               >
                 <v-list-item-icon>
-                  <v-icon style="color:white;font-size:25px;margin-left:0px">{{
+                  <v-icon style="color:white;font-size:23px;margin-left:0px">{{
                     btn.icon
                   }}</v-icon>
                 </v-list-item-icon>
@@ -85,7 +85,7 @@
                   :to="btn.routerlinks"
                 >
                   <v-list-item-title
-                    style="font-size:20px;margin-bottom:10px;margin-left:10px"
+                    style="font-size:15px;margin-bottom:10px;margin-left:10px"
                   >
                     {{ btn.name }}
                   </v-list-item-title>
@@ -119,20 +119,10 @@ export default {
       drawer: true,
       btns: [
         {
-          id: 8,
+          id: 11,
           name: "Dashboard",
           routerlinks: "/superadmin/",
           icon: "fa fa-tachometer"
-        },
-        {
-          id: 0,
-          name: "Add Employee",
-          routerlinks: "/superadmin/newemployee",
-        },
-        {
-          id: 1,
-          name: "View Employee",
-          routerlinks: "/superadmin/viewemployee",
         },
         {
           id: 2,
@@ -145,6 +135,18 @@ export default {
           name: "View Admin",
           routerlinks: "/superadmin/viewemp",
           icon: "fas fa-lock"
+        },
+        {
+          id: 0,
+          name: "Add Employee",
+          routerlinks: "/superadmin/newemployee",
+          icon:"fas fa-user-plus"
+        },
+        {
+          id: 1,
+          name: "View Employee",
+          routerlinks: "/superadmin/viewemployee",
+          icon:"fas fa-user"
         },
         {
           id: 4,
