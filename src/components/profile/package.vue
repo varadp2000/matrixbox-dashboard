@@ -1,14 +1,16 @@
 <template>
   <div style="">
     <v-card>
+      <div style="width:100%;background-color:orange">
       <h1
-        style="text-align:center;padding-top:30px;padding-bottom:20px;border-bottom:solid"
+        style="text-align:center;padding-top:30px;padding-bottom:20px;border-bottom:solid;"
       >
         Package Details
       </h1>
+      </div>
       <v-row>
         <v-col cols="4">
-          <h2 style="margin-left:10px">Delivery Details</h2>
+          <h2 style="margin-left:10px"><u>Delivery Details</u></h2>
           <br />
           <p style="padding-left:30px">
             <strong style="margin-right:10px">First Name:</strong
@@ -29,7 +31,7 @@
           </p>
         </v-col>
         <v-col cols="4">
-          <h2 style="">Sender Details</h2>
+          <h2 style=""><u>Sender Details</u></h2>
           <br />
           <p style="padding-left:30px">
             <strong style="margin-right:10px">First Name:</strong
@@ -50,7 +52,7 @@
           </p>
         </v-col>
         <v-col cols="4" v-if="config.deliveryBoy != null"
-          ><h2>Delivery Boy Details</h2>
+          ><h2><u>Delivery Boy Details</u></h2>
           <br />
           <p style="color:blue" v-if="config.isDelivered">I am Delivered</p>
           <p style="color:green" v-else>Package Under Transit</p>

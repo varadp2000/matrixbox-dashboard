@@ -148,7 +148,7 @@ export default {
   methods: {
     async submit() {
       if (this.rad == 1) {
-        this.type = "Home";
+        this.type = "home";
         this.deliveryAddress = this.dha;
       }
       if (this.rad == 2) {

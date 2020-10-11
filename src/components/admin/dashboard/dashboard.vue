@@ -5,7 +5,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
           default
         >
@@ -19,12 +19,12 @@
                   emp
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Admins:</span>
+                <span style="font-size:20px;color:white">Total Admins:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-users-cog"
               ></i>
             </v-col>
@@ -34,7 +34,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
         >
           <v-row>
@@ -44,12 +44,12 @@
                   trck
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Trackers:</span>
+                <span style="font-size:20px;color:white;margin-left:10px">Total Trackers:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-users"
               ></i>
             </v-col>
@@ -61,7 +61,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
           default
         >
@@ -75,12 +75,12 @@
                   db
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Delivery Boys:</span>
+                <span style="font-size:20px;color:white">Total Delivery Boys:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-baby-carriage"
               ></i>
             </v-col>
@@ -90,7 +90,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
         >
           <v-row>
@@ -100,12 +100,12 @@
                   pkgpend
                 }}</span
                 ><br />
-                <span style="font-size:20px">Pending Packages:</span>
+                <span style="font-size:20px;color:white">Pending Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-clock"
               ></i>
             </v-col>
@@ -117,7 +117,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
           default
         >
@@ -131,12 +131,12 @@
                   pkgdel
                 }}</span
                 ><br />
-                <span style="font-size:20px">Packages Delivered:</span>
+                <span style="font-size:20px;color:white">Packages Delivered:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-check"
               ></i>
             </v-col>
@@ -146,7 +146,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
         >
           <v-row>
@@ -155,12 +155,12 @@
                 <span style="font-size:30px;font-weight:bold;color:#FF9700"
                   >50</span
                 ><br />
-                <span style="font-size:20px">Total Packages:</span>
+                <span style="font-size:20px;color:white">Total Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-box"
               ></i>
             </v-col>
@@ -172,7 +172,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           shaped
         >
           <v-row>
@@ -182,12 +182,12 @@
                   todaypkg
                 }}</span
                 ><br />
-                <span style="font-size:20px">Todays Packages:</span>
+                <span style="font-size:20px;color:white">Todays Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:#F8A555;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-truck"
               ></i>
             </v-col>
@@ -197,7 +197,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D;"
           tile
           shaped
         >
@@ -208,12 +208,12 @@
                   todaydel
                 }}</span
                 ><br />
-                <span style="font-size:20px">Packages Delivered Today:</span>
+                <span style="font-size:20px;color:white">Packages Delivered Today:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;padding:15px;color:lightgrey;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;padding:15px;color:#F8A555;border-radius:5px;margin-top:30px;margin-left:5px"
                 class="fas fa-archive"
               ></i>
             </v-col>

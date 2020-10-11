@@ -5,7 +5,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D"
           shaped
           default
         >
@@ -15,16 +15,16 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                <span style="font-size:30px;font-weight:bold;color:white">{{
                   tdpkg
                 }}</span
                 ><br />
-                <span style="font-size:20px">Today Package:</span>
+                <span style="font-size:20px;color:white">Today Package:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px;color:orange"
                 class="fas fa-users-cog"
               ></i>
             </v-col>
@@ -35,7 +35,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D"
           shaped
           default
         >
@@ -45,16 +45,16 @@
               style="margin-top:30px;text-align:right;padding-top:20px;"
             >
               <p style="font-style:50px">
-                <span style="font-size:30px;font-weight:bold;color:#006ffa">{{
+                <span style="font-size:30px;font-weight:bold;color:white">{{
                   totalpkg
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Packages:</span>
+                <span style="font-size:20px;color:white">Total Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px;color:orange"
                 class="fas fa-users-cog"
               ></i>
             </v-col>

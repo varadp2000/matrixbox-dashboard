@@ -33,22 +33,22 @@
     <div v-else>
       <v-toolbar
         v-show="$store.state.isLoggedIn"
-        style="background-color:#223035;"
+        style="background-color:#16656D;"
         height="100px"
       >
         <v-toolbar-title style=" color:white;font-size:50px;font-weight:bold;"
           ><img
             src="./assets/logo.png"
-            height="100px"
+            height="80px"
             style="padding-top:30px;padding-left:5px"
         /></v-toolbar-title>
         <v-spacer></v-spacer>
         <p style="font-size:20px;color:white">
           <v-icon
-            style="font-size:25px;color:white;margin-bottom:7px;margin-right:10px;"
+            style="font-size:25px;color:white;margin-bottom:7px;margin-right:15px;"
             >fas fa-user</v-icon
           >Welcome {{ this.$store.state.user.user }}
-          <v-btn text style="color:white" @click="logout">Logout</v-btn>
+          <v-btn style="color:white;background-color:orange" @click="logout">Logout</v-btn>
         </p>
       </v-toolbar>
       <v-row>
@@ -65,7 +65,7 @@
             :expand-on-hover="true"
             :mini-variant="true"
             absolute
-            style="background-color:#223035;transition:0.5s;overflow: auto;margin-top:100px;"
+            style="background-color:#16656D;transition:0.5s;overflow: auto;margin-top:100px;"
           >
             <v-divider />
             <v-list dense nav style="height:60px;margion-top:30px">
@@ -75,26 +75,33 @@
                 :key="btn.id"
                 link
               >
+              <v-row>
+                <v-col cols="4">
                 <v-list-item-icon>
-                  <v-icon style="color:white;font-size:23px;margin-left:0px">{{
+                  <v-icon style="color:#F8A555;font-size:23px;margin-left:-10px">{{
                     btn.icon
                   }}</v-icon>
                 </v-list-item-icon>
+                </v-col>
+                <v-col cols="8">
                 <router-link
                   style="color:white;text-decoration:none;"
                   :to="btn.routerlinks"
                 >
                   <v-list-item-title
-                    style="font-size:15px;margin-bottom:10px;margin-left:10px"
+                    style="font-size:15px;margin-left:10px;margin-top:10px"
                   >
                     {{ btn.name }}
                   </v-list-item-title>
                 </router-link>
+                </v-col>
+                </v-row>
               </v-list-item>
             </v-list>
           </v-navigation-drawer>
         </v-col>
-        <v-col cols="11">
+        <v-col cols="1" />
+                <v-col cols="10">
           <v-container>
             <router-view />
           </v-container>

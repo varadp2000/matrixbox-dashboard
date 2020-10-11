@@ -5,7 +5,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D"
           shaped
           default
         >
@@ -19,7 +19,7 @@
                   totalpkg
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Packages:</span>
+                <span style="font-size:20px;color:white">Total Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
@@ -36,7 +36,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D"
           shaped
         >
           <v-row>
@@ -46,7 +46,7 @@
                   totalassignedpkg
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Delivered:</span>
+                <span style="font-size:20px;color:white">Total Delivered:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
@@ -63,7 +63,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D"
           shaped
         >
           <v-row>
@@ -73,7 +73,7 @@
                   pending
                 }}</span
                 ><br />
-                <span style="font-size:20px">Total Pending Packages:</span>
+                <span style="font-size:20px;color:white">Total Pending Packages:</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
@@ -89,7 +89,7 @@
         <v-card
           class="d-inline-block mx-auto"
           height="150px"
-          style="width:100%;margin-bottom:30px"
+          style="width:100%;margin-bottom:30px;background-color:#16656D"
           shaped
           @click="$router.push('/employee/addpackage')"
         >
@@ -97,12 +97,12 @@
             <v-col cols="6" style="margin-top:30px;text-align:right;">
               <p style="font-style:50px">
                 <br />
-                <span style="font-size:20px">Add New Package</span>
+                <span style="font-size:20px;color:white">Add New Package</span>
               </p>
             </v-col>
             <v-col cols="2" style="text-align:left;">
               <i
-                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px"
+                style="font-size:50px;text-align:left;color:lightgrey;padding:15px;border-radius:5px;margin-top:30px;margin-left:5px;color:#F8A555"
                 class="fas fa-plus-square"
               ></i>
             </v-col>
@@ -115,28 +115,28 @@
       <v-simple-table style="width:100%">
         <thead>
           <tr>
-            <th>Sr. No</th>
-            <th>Sender's Name</th>
-            <th>Receiver's Name</th>
-            <th>Delivery Address</th>
-            <th>Actions</th>
+            <th style="font-weight:bold;font-size:20px">Sr. No</th>
+            <th style="font-weight:bold;font-size:20px">Sender's Name</th>
+            <th style="font-weight:bold;font-size:20px">Receiver's Name</th>
+            <th style="font-weight:bold;font-size:20px">Delivery Address</th>
+            <th style="font-weight:bold;font-size:20px">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="text-align:center" v-for="emp in employee" :key="emp.id">
-            <td>{{ emp.id }}</td>
-            <td>
+          <tr style="text-align:center;font-size:17px" v-for="emp in employee" :key="emp.id">
+            <td style="font-size:17px">{{ emp.id }}</td>
+            <td style="font-size:17px">
               {{
                 `${emp.pickUpFirstName} ${emp.pickUpMiddleName} ${emp.pickUpLastName}`
               }}
             </td>
-            <td>
+            <td style="font-size:17px">
               {{
                 `${emp.deliveryFirstName} ${emp.deliveryMiddleName} ${emp.deliveryLastName}`
               }}
             </td>
-            <td>{{ emp.deliveryAddress }}</td>
-            <td>
+            <td style="font-size:17px">{{ emp.deliveryAddress }}</td>
+            <td style="font-size:17px">
               <v-icon
                 @click="$router.push(`/employee/package/${emp.id}`)"
                 style="color:green;margin-right:10px"
